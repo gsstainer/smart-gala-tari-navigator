@@ -1,0 +1,47 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --color-primary: 210 100% 60%;
+    --color-secondary: 280 100% 65%;
+    --color-success: 145 80% 50%;
+    --color-warning: 38 95% 55%;
+    --color-danger: 355 90% 55%;
+  }
+
+  body {
+    background-color: hsl(222, 47%, 6%);
+    background-image: 
+      radial-gradient(at 10% 10%, hsla(280, 80%, 40%, 0.12) 0px, transparent 50%),
+      radial-gradient(at 90% 90%, hsla(210, 80%, 30%, 0.12) 0px, transparent 50%);
+    background-attachment: fixed;
+  }
+}
+
+/* Custom Glassmorphism Utility Classes */
+.bg-glass {
+  background: hsla(223, 40%, 12%, 0.6);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid hsla(223, 30%, 25%, 0.3);
+}
+
+.bg-glass-heavy {
+  background: hsla(223, 40%, 8%, 0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid hsla(223, 30%, 25%, 0.35);
+}
+
+/* Keyframe SVG Dash Animation for flat road overlay path */
+@keyframes dash {
+  to {
+    stroke-dashoffset: -1000;
+  }
+}
+
+.map-road-highlight {
+  animation: dash 35s linear infinite;
+}

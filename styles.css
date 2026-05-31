@@ -1,0 +1,1205 @@
+/* ============================================================================
+   Smart GALA-TARI Navigator - Premium Glassmorphism & Neon HSL Style Sheet
+   ============================================================================ */
+
+/* 1. Google Fonts 로드 */
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap');
+
+/* 2. Global 디자인 시스템 토큰 정의 */
+:root {
+    --font-heading: 'Outfit', 'Noto Sans KR', sans-serif;
+    --font-body: 'Outfit', 'Noto Sans KR', sans-serif;
+
+    /* Harmonious HSL Tailored Dark Theme Color Palette */
+    --bg-main: hsl(222, 47%, 6%);
+    --bg-glass: hsla(223, 40%, 12%, 0.65);
+    --bg-glass-heavy: hsla(223, 40%, 8%, 0.85);
+    --border-glass: hsla(223, 30%, 25%, 0.35);
+    --border-active: hsla(210, 100%, 60%, 0.5);
+
+    /* UI Functional & Dynamic Accents */
+    --color-primary: hsl(210, 100%, 60%);        /* Electric Neon Blue */
+    --color-secondary: hsl(280, 100%, 65%);      /* Cyber Purple */
+    --color-success: hsl(145, 80%, 50%);         /* Mild Mint Green */
+    --color-warning: hsl(38, 95%, 55%);          /* Amber Gold */
+    --color-danger: hsl(355, 90%, 55%);          /* Vivid Coral Crimson */
+
+    /* Typography HSL Scales */
+    --text-pure: hsl(0, 0%, 100%);
+    --text-high: hsl(210, 15%, 90%);
+    --text-mid: hsl(210, 10%, 70%);
+    --text-muted: hsl(210, 10%, 50%);
+
+    --shadow-premium: 0 16px 40px -10px hsla(222, 50%, 2%, 0.7);
+    --shadow-glow-blue: 0 0 20px -3px hsla(210, 100%, 60%, 0.35);
+    --shadow-glow-purple: 0 0 20px -3px hsla(280, 100%, 65%, 0.3);
+
+    --transition-micro: all 0.25s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+/* 3. Reset & Typography */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    scrollbar-width: thin;
+    scrollbar-color: var(--border-glass) transparent;
+}
+
+body {
+    background-color: var(--bg-main);
+    background-image: 
+        radial-gradient(at 10% 10%, hsla(280, 80%, 40%, 0.12) 0px, transparent 50%),
+        radial-gradient(at 90% 90%, hsla(210, 80%, 30%, 0.12) 0px, transparent 50%);
+    background-attachment: fixed;
+    color: var(--text-high);
+    font-family: var(--font-body);
+    font-size: 15px;
+    line-height: 1.6;
+    overflow-x: hidden;
+    padding: 2.5rem 1.5rem;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+    width: 6px;
+}
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+::-webkit-scrollbar-thumb {
+    background: var(--border-glass);
+    border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: var(--text-muted);
+}
+
+/* Premium Layout Grid */
+.dashboard-wrapper {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1.8rem;
+}
+
+/* Header UI Component */
+header {
+    background: var(--bg-glass);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid var(--border-glass);
+    border-radius: 20px;
+    padding: 1.5rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: var(--shadow-premium);
+}
+
+.logo-block h1 {
+    font-family: var(--font-heading);
+    font-weight: 800;
+    font-size: 1.8rem;
+    letter-spacing: -1px;
+    background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.logo-block p {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    font-weight: 400;
+}
+
+.user-status {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.status-badge {
+    background: hsla(210, 100%, 60%, 0.1);
+    border: 1px solid var(--color-primary);
+    color: var(--color-primary);
+    padding: 0.35rem 0.8rem;
+    border-radius: 30px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+.status-badge::before {
+    content: '';
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    background: var(--color-primary);
+    border-radius: 50%;
+    box-shadow: 0 0 10px var(--color-primary);
+}
+
+/* Live Alert Monitor Panel */
+.alert-hub {
+    background: var(--bg-glass-heavy);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid var(--border-glass);
+    border-radius: 20px;
+    padding: 1.5rem;
+    box-shadow: var(--shadow-premium);
+    overflow: hidden;
+}
+
+.section-title {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 1.15rem;
+    color: var(--text-pure);
+    margin-bottom: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-left: 4px solid var(--color-primary);
+    padding-left: 0.75rem;
+}
+
+.live-badge {
+    background: var(--color-danger);
+    color: var(--text-pure);
+    font-size: 0.7rem;
+    padding: 0.2rem 0.6rem;
+    border-radius: 6px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    animation: pulse 1.8s infinite;
+}
+
+.alert-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    max-height: 160px;
+    overflow-y: auto;
+}
+
+.alert-item {
+    background: hsla(222, 30%, 15%, 0.4);
+    border-left: 4px solid var(--border-glass);
+    border-radius: 0 10px 10px 0;
+    padding: 0.8rem 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 0.9rem;
+    animation: slideIn 0.35s cubic-bezier(0.18, 0.89, 0.32, 1.28);
+    transition: var(--transition-micro);
+}
+
+.alert-item.new-legal { border-left-color: var(--color-success); }
+.alert-item.new-infra { border-left-color: var(--color-primary); }
+.alert-item.new-pediatric { border-left-color: var(--color-warning); }
+
+.alert-body {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+.alert-tag {
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 0.15rem 0.45rem;
+    border-radius: 4px;
+}
+
+.alert-tag.legal { background: hsla(145, 80%, 50%, 0.15); color: var(--color-success); }
+.alert-tag.infra { background: hsla(210, 100%, 60%, 0.15); color: var(--color-primary); }
+.alert-tag.pediatric { background: hsla(38, 95%, 55%, 0.15); color: var(--color-warning); }
+
+.alert-time {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+}
+
+/* Grid Layout for Matchmaker & GIS Radar Maps */
+.main-grid {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 1.8rem;
+}
+
+@media (max-width: 1024px) {
+    .main-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* 1:1 Complex Match Duel Board */
+.comparison-board {
+    background: var(--bg-glass);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid var(--border-glass);
+    border-radius: 20px;
+    padding: 1.8rem;
+    box-shadow: var(--shadow-premium);
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.duel-header {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    gap: 1rem;
+    text-align: center;
+}
+
+.complex-card {
+    background: hsla(222, 30%, 15%, 0.5);
+    border: 1px solid var(--border-glass);
+    border-radius: 16px;
+    padding: 1.25rem;
+    transition: var(--transition-micro);
+}
+
+.complex-card:hover {
+    border-color: var(--border-active);
+    transform: translateY(-4px);
+}
+
+.complex-card.origin {
+    box-shadow: 0 8px 24px -10px hsla(280, 100%, 65%, 0.15);
+}
+
+.complex-card.target {
+    box-shadow: 0 8px 24px -10px hsla(210, 100%, 60%, 0.2);
+    border-color: hsla(210, 100%, 60%, 0.25);
+}
+
+.card-role {
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 0.4rem;
+}
+
+.origin .card-role { color: var(--color-secondary); }
+.target .card-role { color: var(--color-primary); }
+
+.complex-name {
+    font-size: 1.3rem;
+    font-weight: 800;
+    color: var(--text-pure);
+}
+
+.complex-price {
+    font-size: 1.6rem;
+    font-weight: 800;
+    margin-top: 0.5rem;
+    background: linear-gradient(135deg, var(--text-pure), var(--text-mid));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.duel-vs {
+    font-size: 1.2rem;
+    font-weight: 900;
+    font-family: var(--font-heading);
+    color: var(--text-muted);
+    background: hsla(222, 30%, 10%, 0.8);
+    border: 1px solid var(--border-glass);
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: var(--shadow-premium);
+}
+
+/* GALA-TARI INDEX Dial Panel */
+.index-showcase {
+    background: hsla(222, 40%, 4%, 0.45);
+    border: 1px solid var(--border-glass);
+    border-radius: 16px;
+    padding: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.index-radial {
+    position: relative;
+    width: 120px;
+    height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.index-radial svg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transform: rotate(-90deg);
+}
+
+.index-radial circle {
+    width: 100%;
+    height: 100%;
+    fill: none;
+    stroke-width: 10;
+    stroke-linecap: round;
+}
+
+.circle-bg {
+    stroke: hsla(222, 20%, 20%, 0.8);
+}
+
+.circle-progress {
+    stroke: url(#gradient-neon);
+    stroke-dasharray: 314.16;
+    stroke-dashoffset: 62.8; /* (100 - X) / 100 * 314.16 */
+    transition: stroke-dashoffset 1s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.index-number-container {
+    text-align: center;
+    z-index: 10;
+}
+
+.index-val {
+    font-size: 2.2rem;
+    font-weight: 800;
+    color: var(--text-pure);
+    line-height: 1.1;
+}
+
+.index-unit {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.index-verdict {
+    flex: 1;
+    margin-left: 2rem;
+}
+
+.verdict-badge {
+    background: var(--color-success);
+    color: var(--bg-main);
+    font-size: 0.8rem;
+    font-weight: 800;
+    padding: 0.25rem 0.6rem;
+    border-radius: 6px;
+    display: inline-block;
+    margin-bottom: 0.5rem;
+}
+
+.verdict-desc {
+    font-size: 0.92rem;
+    color: var(--text-high);
+}
+
+/* Radar Score Table Metrics */
+.score-comparison-table {
+    display: flex;
+    flex-direction: column;
+    gap: 0.9rem;
+    margin-top: 0.5rem;
+}
+
+.score-row {
+    background: hsla(222, 30%, 15%, 0.25);
+    border: 1px solid hsla(223, 20%, 20%, 0.4);
+    border-radius: 10px;
+    padding: 0.9rem 1.25rem;
+}
+
+.row-header {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.row-label {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+.row-scores {
+    display: flex;
+    gap: 0.8rem;
+    font-size: 0.85rem;
+}
+
+.score-origin { color: var(--color-secondary); font-weight: 700; }
+.score-target { color: var(--color-primary); font-weight: 700; }
+
+.row-bars {
+    position: relative;
+    height: 6px;
+    background: hsla(222, 20%, 15%, 0.7);
+    border-radius: 3px;
+    overflow: hidden;
+}
+
+.bar-origin, .bar-target {
+    position: absolute;
+    height: 100%;
+    left: 0;
+    top: 0;
+    border-radius: 3px;
+    transition: width 1s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.bar-origin {
+    background: var(--color-secondary);
+    z-index: 1;
+}
+
+.bar-target {
+    background: var(--color-primary);
+    z-index: 2;
+}
+
+/* Budget stress simulator */
+.financial-stress-panel {
+    background: var(--bg-glass-heavy);
+    border: 1px solid var(--border-glass);
+    border-radius: 16px;
+    padding: 1.5rem;
+}
+
+.stress-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.2rem;
+}
+
+.stress-status-display {
+    padding: 0.3rem 0.8rem;
+    border-radius: 6px;
+    font-size: 0.8rem;
+    font-weight: 800;
+}
+
+.status-safe { background: hsla(145, 80%, 50%, 0.15); color: var(--color-success); }
+.status-warning { background: hsla(38, 95%, 55%, 0.15); color: var(--color-warning); }
+.status-critical { background: hsla(355, 90%, 55%, 0.15); color: var(--color-danger); }
+
+.slider-group {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.2rem;
+}
+
+@media (max-width: 600px) {
+    .slider-group {
+        grid-template-columns: 1fr;
+    }
+}
+
+.slider-container {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+}
+
+.slider-label-val {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.85rem;
+    color: var(--text-mid);
+}
+
+.slider-val {
+    font-weight: 700;
+    color: var(--text-pure);
+}
+
+input[type=range] {
+    -webkit-appearance: none;
+    width: 100%;
+    background: hsla(222, 20%, 15%, 0.9);
+    height: 6px;
+    border-radius: 3px;
+    outline: none;
+}
+
+input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: var(--color-primary);
+    cursor: pointer;
+    box-shadow: 0 0 10px var(--color-primary);
+    transition: transform 0.1s;
+}
+
+input[type=range]::-webkit-slider-thumb:active {
+    transform: scale(1.3);
+}
+
+.stress-warning-box {
+    margin-top: 1.2rem;
+    background: hsla(355, 90%, 55%, 0.08);
+    border: 1px dashed hsla(355, 90%, 55%, 0.3);
+    border-radius: 10px;
+    padding: 0.9rem;
+    font-size: 0.85rem;
+    color: hsl(355, 100%, 75%);
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+/* Right Column Panel: GIS Walking Maps & Control Center */
+.control-sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 1.8rem;
+}
+
+.gis-radar-panel {
+    background: var(--bg-glass);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid var(--border-glass);
+    border-radius: 20px;
+    padding: 1.8rem;
+    box-shadow: var(--shadow-premium);
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+.radar-controls {
+    display: flex;
+    gap: 0.6rem;
+    flex-wrap: wrap;
+}
+
+.filter-btn {
+    background: hsla(222, 30%, 15%, 0.8);
+    border: 1px solid var(--border-glass);
+    color: var(--text-mid);
+    padding: 0.45rem 0.9rem;
+    border-radius: 8px;
+    font-size: 0.82rem;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    transition: var(--transition-micro);
+}
+
+.filter-btn:hover {
+    border-color: var(--text-muted);
+    color: var(--text-high);
+}
+
+.filter-btn.active {
+    background: hsla(210, 100%, 60%, 0.12);
+    border-color: var(--color-primary);
+    color: var(--color-primary);
+    box-shadow: var(--shadow-glow-blue);
+}
+
+.filter-btn.active.pediatric { border-color: var(--color-warning); color: var(--color-warning); background: hsla(38, 95%, 55%, 0.12); box-shadow: 0 0 15px -3px hsla(38, 95%, 55%, 0.3); }
+.filter-btn.active.childcare { border-color: var(--color-secondary); color: var(--color-secondary); background: hsla(280, 100%, 65%, 0.12); box-shadow: var(--shadow-glow-purple); }
+.filter-btn.active.flatness { border-color: var(--color-success); color: var(--color-success); background: hsla(145, 80%, 50%, 0.12); box-shadow: 0 0 15px -3px hsla(145, 80%, 50%, 0.3); }
+
+.map-viewport-container {
+    position: relative;
+    border-radius: 14px;
+    overflow: hidden;
+    border: 1px solid var(--border-glass);
+    box-shadow: inset 0 0 30px hsla(222, 50%, 2%, 0.8);
+}
+
+.gis-svg-map {
+    width: 100%;
+    height: 380px;
+    background: hsl(222, 45%, 4%);
+    display: block;
+}
+
+/* Map SVG Elements */
+.map-bg-grid {
+    stroke: hsla(222, 20%, 15%, 0.4);
+    stroke-width: 1;
+}
+
+.map-road {
+    stroke: hsla(223, 20%, 20%, 0.8);
+    stroke-width: 12;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    fill: none;
+}
+
+.map-road-inner {
+    stroke: hsl(222, 40%, 8%);
+    stroke-width: 8;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    fill: none;
+}
+
+.map-road-highlight {
+    stroke: var(--color-success);
+    stroke-width: 6;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    fill: none;
+    opacity: 0.7;
+    stroke-dasharray: 8 8;
+    animation: dash 30s linear infinite;
+    display: none;
+}
+
+.map-complex-poly {
+    fill: hsla(222, 30%, 15%, 0.8);
+    stroke: var(--border-glass);
+    stroke-width: 2;
+    transition: var(--transition-micro);
+    cursor: pointer;
+}
+
+.map-complex-poly:hover {
+    fill: hsla(222, 30%, 25%, 0.9);
+    stroke: var(--text-muted);
+}
+
+.map-complex-poly.active-complex-bo-ram {
+    stroke: var(--color-secondary);
+    fill: hsla(280, 100%, 65%, 0.08);
+}
+
+.map-complex-poly.active-complex-shin-an {
+    stroke: var(--color-primary);
+    fill: hsla(210, 100%, 60%, 0.08);
+}
+
+.map-poi {
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.25s;
+    opacity: 0;
+    transform: scale(0);
+}
+
+.map-poi.visible {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.map-poi-pediatric { fill: var(--color-warning); stroke: hsl(222, 47%, 6%); stroke-width: 1.5; }
+.map-poi-childcare { fill: var(--color-secondary); stroke: hsl(222, 47%, 6%); stroke-width: 1.5; }
+.map-poi-park { fill: var(--color-success); stroke: hsl(222, 47%, 6%); stroke-width: 1.5; }
+
+.map-label {
+    font-size: 11px;
+    font-weight: 700;
+    fill: var(--text-mid);
+    text-anchor: middle;
+    pointer-events: none;
+}
+
+.map-label.complex-name-lbl {
+    fill: var(--text-high);
+    font-size: 12px;
+}
+
+.gis-legend {
+    display: flex;
+    justify-content: space-around;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    border-top: 1px solid var(--border-glass);
+    padding-top: 1rem;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+}
+
+.legend-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+}
+
+/* Developer Console Panel */
+.dev-console-panel {
+    background: var(--bg-glass-heavy);
+    border: 1px solid var(--border-glass);
+    border-radius: 20px;
+    padding: 1.5rem;
+    box-shadow: var(--shadow-premium);
+}
+
+.dev-actions {
+    display: flex;
+    gap: 0.6rem;
+    margin-bottom: 1rem;
+}
+
+.dev-btn {
+    background: var(--color-primary);
+    color: var(--bg-main);
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    font-size: 0.82rem;
+    font-weight: 800;
+    cursor: pointer;
+    transition: var(--transition-micro);
+}
+
+.dev-btn:hover {
+    background: hsl(210, 100%, 70%);
+    box-shadow: var(--shadow-glow-blue);
+    transform: translateY(-2px);
+}
+
+.dev-btn.secondary {
+    background: hsla(222, 30%, 15%, 0.8);
+    border: 1px solid var(--border-glass);
+    color: var(--text-high);
+}
+
+.dev-btn.secondary:hover {
+    background: hsla(222, 30%, 25%, 0.8);
+    border-color: var(--text-muted);
+}
+
+.terminal-box {
+    background: hsl(222, 50%, 2%);
+    border: 1px solid var(--border-glass);
+    border-radius: 10px;
+    padding: 1rem;
+    font-family: 'Consolas', 'Courier New', monospace;
+    font-size: 0.82rem;
+    color: var(--text-mid);
+    max-height: 180px;
+    overflow-y: auto;
+}
+
+.terminal-line {
+    margin-bottom: 0.3rem;
+}
+
+.terminal-line.sys { color: var(--color-success); }
+.terminal-line.err { color: var(--color-danger); }
+.terminal-line.cmd { color: var(--color-primary); }
+
+/* Keyframe Animations */
+@keyframes pulse {
+    0% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.05); opacity: 0.7; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+@keyframes slideIn {
+    from { transform: translateX(30px); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes dash {
+    to {
+        stroke-dashoffset: -1000;
+    }
+}
+
+/* ============================================================================
+   Smart GALA-TARI Navigator - Advanced Interactive Enhancements Addon
+   ============================================================================ */
+
+/* 1. Custom Select Dropdown Styles */
+.dropdown-group-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    margin-bottom: 1rem;
+}
+
+.dropdown-container {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+}
+
+.dropdown-label {
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--text-muted);
+    text-transform: uppercase;
+}
+
+.custom-select {
+    background: hsla(222, 30%, 15%, 0.85);
+    border: 1px solid var(--border-glass);
+    color: var(--text-high);
+    padding: 0.65rem 1rem;
+    border-radius: 10px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    outline: none;
+    cursor: pointer;
+    transition: var(--transition-micro);
+    width: 100%;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-image: url("data:image/svg+xml;utf8,<svg fill='white' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/><path d='M0 0h24v24H0z' fill='none'/></svg>");
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 18px;
+}
+
+.custom-select:focus, .custom-select:hover {
+    border-color: var(--color-primary);
+    box-shadow: var(--shadow-glow-blue);
+}
+
+.custom-select option {
+    background: var(--bg-glass-heavy);
+    color: var(--text-high);
+}
+
+/* 2. Real-time Crawling & Government PDF Archive Board */
+.archive-board-panel {
+    background: var(--bg-glass);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid var(--border-glass);
+    border-radius: 20px;
+    padding: 1.8rem;
+    box-shadow: var(--shadow-premium);
+}
+
+.archive-search-bar {
+    display: flex;
+    gap: 0.8rem;
+    margin-bottom: 1.25rem;
+}
+
+.archive-search-input {
+    flex: 1;
+    background: hsla(222, 30%, 15%, 0.85);
+    border: 1px solid var(--border-glass);
+    color: var(--text-high);
+    padding: 0.6rem 1.2rem;
+    border-radius: 8px;
+    font-size: 0.88rem;
+    outline: none;
+}
+
+.archive-search-input:focus {
+    border-color: var(--color-primary);
+}
+
+.archive-table-container {
+    max-height: 240px;
+    overflow-y: auto;
+    border: 1px solid var(--border-glass);
+    border-radius: 12px;
+}
+
+.archive-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+    font-size: 0.88rem;
+}
+
+.archive-table th {
+    background: hsla(222, 40%, 8%, 0.9);
+    color: var(--text-muted);
+    font-weight: 700;
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid var(--border-glass);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.archive-table td {
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid var(--border-glass);
+    color: var(--text-high);
+    vertical-align: middle;
+}
+
+.archive-table tr:hover {
+    background: hsla(222, 30%, 18%, 0.4);
+}
+
+.badge-pdf {
+    background: hsla(355, 90%, 55%, 0.15);
+    color: var(--color-danger);
+    font-size: 0.72rem;
+    padding: 0.15rem 0.4rem;
+    border-radius: 4px;
+    font-weight: 700;
+    margin-right: 0.4rem;
+}
+
+.badge-article {
+    background: hsla(210, 100%, 60%, 0.15);
+    color: var(--color-primary);
+    font-size: 0.72rem;
+    padding: 0.15rem 0.4rem;
+    border-radius: 4px;
+    font-weight: 700;
+    margin-right: 0.4rem;
+}
+
+.btn-download {
+    background: hsla(222, 20%, 20%, 0.9);
+    border: 1px solid var(--border-glass);
+    color: var(--text-mid);
+    padding: 0.25rem 0.6rem;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.78rem;
+    transition: var(--transition-micro);
+}
+
+.btn-download:hover {
+    background: var(--color-primary);
+    color: var(--bg-main);
+    border-color: var(--color-primary);
+}
+
+/* 3. Price Dynamic Correction & Advance Purchase Consultation card */
+.consulting-toggle-card {
+    background: linear-gradient(135deg, hsla(280, 80%, 40%, 0.15), hsla(222, 40%, 10%, 0.8));
+    border: 1px dashed var(--color-secondary);
+    border-radius: 16px;
+    padding: 1.25rem;
+    box-shadow: var(--shadow-glow-purple);
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.consulting-toggle-card::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, hsla(280, 100%, 70%, 0.08) 0%, transparent 70%);
+    pointer-events: none;
+}
+
+.consulting-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.consulting-title {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--text-pure);
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+.switch-container {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+/* Switch Toggle Styling */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 44px;
+    height: 22px;
+}
+
+.switch input { 
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.switch-slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: hsla(222, 20%, 30%, 0.8);
+    transition: .4s;
+    border-radius: 34px;
+}
+
+.switch-slider:before {
+    position: absolute;
+    content: "";
+    height: 16px;
+    width: 16px;
+    left: 3px;
+    bottom: 3px;
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%;
+}
+
+input:checked + .switch-slider {
+    background-color: var(--color-secondary);
+}
+
+input:focus + .switch-slider {
+    box-shadow: 0 0 1px var(--color-secondary);
+}
+
+input:checked + .switch-slider:before {
+    transform: translateX(22px);
+}
+
+.consulting-btn-pulse {
+    background: var(--color-secondary);
+    color: var(--bg-main);
+    border: none;
+    padding: 0.6rem 1.2rem;
+    border-radius: 8px;
+    font-size: 0.82rem;
+    font-weight: 800;
+    cursor: pointer;
+    text-align: center;
+    transition: var(--transition-micro);
+    animation: pulse-glow 2s infinite;
+}
+
+.consulting-btn-pulse:hover {
+    background: hsl(280, 100%, 75%);
+    box-shadow: var(--shadow-glow-purple);
+}
+
+@keyframes pulse-glow {
+    0% {
+        box-shadow: 0 0 0 0 hsla(280, 100%, 65%, 0.6);
+    }
+    70% {
+        box-shadow: 0 0 0 10px hsla(280, 100%, 65%, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 hsla(280, 100%, 65%, 0);
+    }
+}
+
+/* 4. Fullscreen Blur Modal (Premium Glass Modal Popup) */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(4, 8, 16, 0.7);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.modal-overlay.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.modal-box {
+    background: var(--bg-glass-heavy);
+    border: 1px solid var(--color-secondary);
+    border-radius: 24px;
+    width: 90%;
+    max-width: 580px;
+    padding: 2.2rem;
+    box-shadow: 0 24px 50px -10px hsla(280, 100%, 20%, 0.4);
+    transform: translateY(30px);
+    transition: transform 0.3s cubic-bezier(0.18, 0.89, 0.32, 1.28);
+}
+
+.modal-overlay.active .modal-box {
+    transform: translateY(0);
+}
+
+.modal-close-btn {
+    position: absolute;
+    top: 1.25rem;
+    right: 1.25rem;
+    background: transparent;
+    border: none;
+    color: var(--text-muted);
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.modal-close-btn:hover {
+    color: var(--text-pure);
+}
+
+/* 5. GIS Map Hover Info Overlay */
+.map-hover-card {
+    position: absolute;
+    bottom: 12px;
+    left: 12px;
+    right: 12px;
+    background: var(--bg-glass-heavy);
+    border: 1px solid var(--border-glass);
+    border-radius: 10px;
+    padding: 0.65rem 1rem;
+    font-size: 0.82rem;
+    color: var(--text-high);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    pointer-events: none;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: var(--transition-micro);
+}
+
+.map-hover-card.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+

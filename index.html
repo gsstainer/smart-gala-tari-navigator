@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart GALA-TARI Navigator | 상급지 이동 & 자산 증식 대시보드</title>
+    
+    <!-- SEO 및 메타 정보 최적화 -->
+    <meta name="description" content="대한민국 서울/수도권 내 상급지 이동(갈아타기) 및 자산 증식을 극대화하기 위해 거시 경제, 교통 호재, 정비 사업성, 그리고 영유아 육아 인프라 데이터를 총체적으로 파악할 수 있는 스마트 부동산 네비게이터 웹 대시보드">
+    <meta name="keywords" content="부동산 갈아타기, 자산증식, 재건축 사업성, 대지지분 계산, 소아과 야간진료, 동북선 경전철, 중계 동진신안, 상계보람아파트">
+    <meta name="author" content="Antigravity DeepMind">
+    
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <div class="dashboard-wrapper">
+        
+        <!-- 1. Header Navigation Bar -->
+        <header id="dashboard-header">
+            <div class="logo-block">
+                <h1>Smart GALA-TARI Navigator</h1>
+                <p>영유아 가구 최적화 상급지 자산 이동 플랫폼</p>
+            </div>
+            
+            <div class="user-status">
+                <div class="status-badge" id="user-role-badge">
+                    실시간 투자 & 보육 모니터링 활성
+                </div>
+            </div>
+        </header>
+
+        <!-- 2. Live Alert Monitoring Panel -->
+        <section class="alert-hub" id="live-alert-hub" aria-label="실시간 크롤링 경보판">
+            <h2 class="section-title">
+                실시간 크롤링 & 모니터링 경보판
+                <span class="live-badge">LIVE UPDATES</span>
+            </h2>
+            
+            <div class="alert-list" id="alert-list">
+                <div class="alert-item new-pediatric">
+                    <div class="alert-body">
+                        <span class="alert-tag pediatric">육아/의료</span>
+                        <span>중계 은행사거리 중심가 <strong>'하늘별소아청소년과'</strong> 똑닥 평일/주말 진료 스케줄 정상 수집 완료</span>
+                    </div>
+                    <span class="alert-time">5분 전</span>
+                </div>
+                <div class="alert-item new-infra">
+                    <div class="alert-body">
+                        <span class="alert-tag infra">지역 정치</span>
+                        <span>노원구 지방선거 교통 핵심 공약 <strong>'동북선 경전철 2026년 하반기 시운전 개통'</strong> 이행 단계 진입 모니터링 완료</span>
+                    </div>
+                    <span class="alert-time">25분 전</span>
+                </div>
+                <div class="alert-item new-legal">
+                    <div class="alert-body">
+                        <span class="alert-tag legal">법률/규제</span>
+                        <span>서울시 노원지구단위계획 변경 고시문 파싱 - 은행사거리 역세권 고밀 복합개발 용적률 완화 가중치 반영 완료</span>
+                    </div>
+                    <span class="alert-time">1시간 전</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. Main Dashboard Interactive Grids -->
+        <main class="main-grid" id="main-content-grid">
+            
+            <!-- Left Side: Matchmaker Duel & Financial Simulator -->
+            <div class="comparison-board" id="duel-board">
+                <h2 class="section-title">1:1 상급지 갈아타기 매치 메이커</h2>
+                
+                <!-- Option Controls (다중 아파트 및 시세 보정 드롭다운) -->
+                <div class="dropdown-group-wrapper">
+                    <div style="display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 1rem;">
+                        
+                        <div class="dropdown-container">
+                            <label class="dropdown-label" for="select-target-complex">갈아타기 목표 상급지 아파트/평형 선택</label>
+                            <select class="custom-select" id="select-target-complex">
+                                <option value="shin_an_37" selected>중계 동진신안아파트 (37평 / 전용 101㎡) - 미발표</option>
+                                <option value="shin_an_48">중계 동진신안아파트 (48평 / 전용 134㎡) - 미발표</option>
+                                <option value="cheong_gu_32">중계 청구3차아파트 (32평 / 전용 84㎡) - 재건축 발표</option>
+                                <option value="life_cheong_42">중계 라이프청구아파트 (42평 / 전용 115㎡) - 재건축 발표</option>
+                            </select>
+                        </div>
+
+                        <div class="dropdown-container">
+                            <label class="dropdown-label" for="select-price-correction">보람아파트 시세 상승 보정</label>
+                            <select class="custom-select" id="select-price-correction">
+                                <option value="actual_price" selected>실거래 기준 +1.0억 보정</option>
+                                <option value="asking_price">시장 호가 기준 +1.7억 보정</option>
+                                <option value="none">보정 없음 (매수 원시세)</option>
+                            </select>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Duel Complexes Row -->
+                <div class="duel-header">
+                    <div class="complex-card origin" id="card-origin">
+                        <div class="card-role">현재 보유 및 거주 단지</div>
+                        <div class="complex-name">상계보람 2단지</div>
+                        <div class="complex-price">6억 5,000만원</div>
+                    </div>
+                    
+                    <div class="duel-vs">VS</div>
+                    
+                    <div class="complex-card target" id="card-target">
+                        <div class="card-role">이동 목표 상급지 단지</div>
+                        <div class="complex-name">중계 동진신안 (37평)</div>
+                        <div class="complex-price">9억 8,000만원</div>
+                    </div>
+                </div>
+
+                <!-- GALA-TARI INDEX Showcase Dial -->
+                <div class="index-showcase">
+                    <div class="index-radial">
+                        <svg>
+                            <defs>
+                                <linearGradient id="gradient-neon" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" stop-color="var(--color-primary)" />
+                                    <stop offset="100%" stop-color="var(--color-secondary)" />
+                                </linearGradient>
+                            </defs>
+                            <circle class="circle-bg" cx="60" cy="60" r="50"></circle>
+                            <circle class="circle-progress" cx="60" cy="60" r="50"></circle>
+                        </svg>
+                        <div class="index-number-container">
+                            <div class="index-val" id="index-number">85</div>
+                            <div class="index-unit">Index</div>
+                        </div>
+                    </div>
+
+                    <div class="index-verdict">
+                        <div class="verdict-badge" id="verdict-badge">갈아타기 적극 추천</div>
+                        <div class="verdict-desc" id="verdict-desc">
+                            현재 주거 만족도가 비약적으로 증가하며 재무적 안전 여유도 확보된 영리한 상급지 진입 타이밍입니다.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- [고도화 추가] 재건축 고시(기사) 전 선제 갈아타기 컨설팅 카드 -->
+                <div class="consulting-toggle-card" id="reconstruction-consulting-card">
+                    <div class="consulting-header">
+                        <div class="consulting-title">
+                            🔮 재건축 결정 고시(기사) 전 선제 갈아타기 전략 모드
+                        </div>
+                        <div class="switch-container">
+                            <span style="font-size:0.78rem; font-weight:600; color:var(--text-mid);">컨설팅 가산점</span>
+                            <label class="switch">
+                                <input type="checkbox" id="switch-advance-consulting" checked>
+                                <span class="switch-slider"></span>
+                            </label>
+                        </div>
+                    </div>
+                    <div style="font-size:0.85rem; color:var(--text-high); line-height: 1.5;">
+                        언론 보도 및 정비사업 고시 확정 발표 전, <strong>저평가 갭 격차 구간</strong>을 포착하여 상급지 선제 진입 가능성을 연동 가산합니다.
+                    </div>
+                    <button class="consulting-btn-pulse" id="btn-open-consulting">선제 매수 타이밍 정밀 보고서 출력</button>
+                </div>
+
+                <!-- Radar Metrics Comparison Table -->
+                <div class="score-comparison-table" id="score-comparison-table">
+                    
+                    <!-- Row 1: 정비사업 & 투자 가치 -->
+                    <div class="score-row" id="row-business">
+                        <div class="row-header">
+                            <span class="row-label">📈 투자 가치 및 정비성 (재건축 대지지분 / 선제보너스)</span>
+                            <span class="row-scores">
+                                <span class="score-origin" id="score-o-business">35.0</span>
+                                <span style="color:var(--text-muted)">/</span>
+                                <span class="score-target" id="score-t-business">45.0</span>
+                            </span>
+                        </div>
+                        <div class="row-bars">
+                            <div class="bar-origin" id="bar-origin-business" style="width: 35%;"></div>
+                            <div class="bar-target" id="bar-target-business" style="width: 45%;"></div>
+                        </div>
+                    </div>
+
+                    <!-- Row 2: 보육 & 소아과 의료 -->
+                    <div class="score-row" id="row-care">
+                        <div class="row-header">
+                            <span class="row-label">👶 보육 및 의료 편의성 (야간 소아과 / 똑닥 제휴)</span>
+                            <span class="row-scores">
+                                <span class="score-origin" id="score-o-care">8.5</span>
+                                <span style="color:var(--text-muted)">/</span>
+                                <span class="score-target" id="score-t-care">14.1</span>
+                            </span>
+                        </div>
+                        <div class="row-bars">
+                            <div class="bar-origin" id="bar-origin-care" style="width: 56%;"></div>
+                            <div class="bar-target" id="bar-target-care" style="width: 94%;"></div>
+                        </div>
+                    </div>
+
+                    <!-- Row 3: 유모차 보행 환경 -->
+                    <div class="score-row" id="row-mobility">
+                        <div class="row-header">
+                            <span class="row-label">🛒 유모차 보행 및 평지 지형 (지하주차장 직결 여부)</span>
+                            <span class="row-scores">
+                                <span class="score-origin" id="score-o-mobility">5.2</span>
+                                <span style="color:var(--text-muted)">/</span>
+                                <span class="score-target" id="score-t-mobility">7.3</span>
+                            </span>
+                        </div>
+                        <div class="row-bars">
+                            <div class="bar-origin" id="bar-origin-mobility" style="width: 34%;"></div>
+                            <div class="bar-target" id="bar-target-mobility" style="width: 48%;"></div>
+                        </div>
+                    </div>
+
+                    <!-- Row 4: 환경 & 소음 안전성 -->
+                    <div class="score-row" id="row-comfort">
+                        <div class="row-header">
+                            <span class="row-label">🌳 공원 접근성 및 도로 소음 안전 (안쪽동 배치)</span>
+                            <span class="row-scores">
+                                <span class="score-origin" id="score-o-comfort">7.8</span>
+                                <span style="color:var(--text-muted)">/</span>
+                                <span class="score-target" id="score-t-comfort">7.0</span>
+                            </span>
+                        </div>
+                        <div class="row-bars">
+                            <div class="bar-origin" id="bar-origin-comfort" style="width: 78%;"></div>
+                            <div class="bar-target" id="bar-target-comfort" style="width: 70%;"></div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Financial Stress Test Simulator -->
+                <div class="financial-stress-panel" id="financial-simulator">
+                    <div class="stress-header">
+                        <h3 style="font-size:1.05rem; font-weight:700; color:var(--text-pure)">가구 재무 스트레스 테스트</h3>
+                        <div class="stress-status-display status-safe" id="stress-status">안정적 (SAFE)</div>
+                    </div>
+
+                    <div class="slider-group">
+                        <div class="slider-container">
+                            <div class="slider-label-val">
+                                <span>보유 현금 자산</span>
+                                <span class="slider-val" id="cash-val">20,000만원</span>
+                            </div>
+                            <input type="range" id="cash-slider" min="5000" max="50000" step="500" value="20000">
+                        </div>
+
+                        <div class="slider-container">
+                            <div class="slider-label-val">
+                                <span>신규 확보 가능 대출액</span>
+                                <span class="slider-val" id="loan-val">40,000만원</span>
+                            </div>
+                            <input type="range" id="loan-slider" min="10000" max="60000" step="1000" value="40000">
+                        </div>
+
+                        <div class="slider-container">
+                            <div class="slider-label-val">
+                                <span>Remodeling 올수리(단열/샤시) 비용</span>
+                                <span class="slider-val" id="remodeling-val">6,500만원</span>
+                            </div>
+                            <input type="range" id="remodeling-slider" min="2000" max="12000" step="100" value="6500">
+                        </div>
+
+                        <div class="slider-container">
+                            <div class="slider-label-val">
+                                <span>부모 합산 연 소득 (DSR 검증용)</span>
+                                <span class="slider-val" id="income-val">9,500만원</span>
+                            </div>
+                            <input type="range" id="income-slider" min="3000" max="25000" step="500" value="9500">
+                        </div>
+                    </div>
+
+                    <!-- Dynamic warnings box -->
+                    <div class="stress-warning-box" id="warning-box" style="display: none;">
+                        <!-- JS로 유동적 생성 -->
+                    </div>
+
+                    <!-- Budget display metrics -->
+                    <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap:1rem; margin-top:1.25rem; border-top:1px solid var(--border-glass); padding-top:1.25rem; text-align:center;">
+                        <div>
+                            <div style="font-size:0.75rem; color:var(--text-muted); font-weight:600;">필요 총 자금</div>
+                            <div style="font-weight:800; font-size:1.15rem;" id="req-capital">104,734 <span style="font-size:0.75rem; color:var(--text-muted)">만원</span></div>
+                        </div>
+                        <div>
+                            <div style="font-size:0.75rem; color:var(--text-muted); font-weight:600;">조달 가능 자산</div>
+                            <div style="font-weight:800; font-size:1.15rem;" id="avail-resources">110,000 <span style="font-size:0.75rem; color:var(--text-muted)">만원</span></div>
+                        </div>
+                        <div>
+                            <div style="font-size:0.75rem; color:var(--text-muted); font-weight:600;">순 예산 여유마진</div>
+                            <div style="font-weight:800; font-size:1.15rem; color:var(--color-success);" id="net-margin">+5,266 <span style="font-size:0.75rem; color:var(--text-muted)">만원</span></div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Right Side: GIS Walk Maps & Crawler Admin console -->
+            <div class="control-sidebar" id="control-sidebar">
+                
+                <!-- GIS Map Panel -->
+                <div class="gis-radar-panel" id="gis-radar-panel">
+                    <h2 class="section-title">은행사거리 영유아 안심 레이더</h2>
+                    
+                    <div class="radar-controls">
+                        <button class="filter-btn active pediatric" data-filter="pediatric">🏥 야간진료 소아과</button>
+                        <button class="filter-btn active childcare" data-filter="childcare">🧸 국공립 어린이집</button>
+                        <button class="filter-btn active flatness" data-filter="flatness">🏃 유모차 평지 보행로</button>
+                    </div>
+
+                    <!-- GIS Map Viewport (Interactive SVG) -->
+                    <div class="map-viewport-container" id="map-viewport">
+                        <svg class="gis-svg-map" viewBox="0 0 500 380">
+                            <!-- Background Grid -->
+                            <defs>
+                                <pattern id="grid-pattern" width="20" height="20" patternUnits="userSpaceOnUse">
+                                    <path d="M 20 0 L 0 0 0 20" fill="none" class="map-bg-grid"></path>
+                                </pattern>
+                            </defs>
+                            <rect width="100%" height="100%" fill="url(#grid-pattern)"></rect>
+
+                            <!-- GIS Road Net -->
+                            <path class="map-road" d="M 50 190 L 450 190 M 250 50 L 250 330 M 120 50 L 120 330 M 380 50 L 380 330"></path>
+                            <path class="map-road-inner" d="M 50 190 L 450 190 M 250 50 L 250 330 M 120 50 L 120 330 M 380 50 L 380 330"></path>
+                            
+                            <!-- 유모차 평탄 보행 하이라이트 -->
+                            <path class="map-road-highlight" d="M 120 190 L 380 190 M 250 80 L 250 300"></path>
+
+                            <!-- Complexes Polygons (아파트 단지 물리 구획) -->
+                            <!-- 상계 보람 (좌상단 영역화) -->
+                            <polygon class="map-complex-poly active-complex-bo-ram" points="60,70 110,70 110,130 60,130" id="poly-bo-ram"></polygon>
+                            <!-- 중계 동진신안 (우상단 은행사거리 최핵심지) -->
+                            <polygon class="map-complex-poly active-complex-shin-an" points="260,100 310,100 310,160 260,160" id="poly-shin-an"></polygon>
+
+                            <!-- POI Markers -->
+                            <!-- 소아과 (Yellow) -->
+                            <g class="map-poi map-poi-pediatric visible" transform="translate(290, 180)">
+                                <circle r="6" class="map-poi-pediatric"></circle>
+                                <text class="map-label" y="-10">하늘별소아과</text>
+                            </g>
+                            <!-- 어린이집 (Purple) -->
+                            <g class="map-poi map-poi-childcare visible" transform="translate(270, 90)">
+                                <circle r="6" class="map-poi-childcare"></circle>
+                                <text class="map-label" y="-10">중계1동어린이집</text>
+                            </g>
+                            <g class="map-poi map-poi-childcare visible" transform="translate(85, 100)">
+                                <circle r="6" class="map-poi-childcare"></circle>
+                                <text class="map-label" y="-10">보람가정원</text>
+                            </g>
+                            <!-- 어린이공원 (Mint Green) -->
+                            <g class="map-poi map-poi-park visible" transform="translate(340, 120)">
+                                <circle r="6" class="map-poi-park"></circle>
+                                <text class="map-label" y="-10">중계어린이공원</text>
+                            </g>
+
+                            <!-- Labels -->
+                            <text class="map-label complex-name-lbl" x="85" y="145">상계보람 2단지</text>
+                            <text class="map-label complex-name-lbl" x="285" y="175">중계 동진신안</text>
+                            <text class="map-label" x="380" y="208" style="font-size: 10px; fill:var(--text-muted)">은행사거리</text>
+                        </svg>
+
+                        <!-- GIS Map Hover Info overlay -->
+                        <div class="map-hover-card" id="map-hover-card">
+                            <span id="hover-complex-name" style="font-weight:700; color:var(--text-pure);">상계보람 2단지</span>
+                            <span id="hover-complex-metric" style="color:var(--text-muted);">용적률 197%</span>
+                        </div>
+                    </div>
+
+                    <div class="gis-legend">
+                        <div class="legend-item">
+                            <span class="legend-dot" style="background: var(--color-warning);"></span> 소아과 의원
+                        </div>
+                        <div class="legend-item">
+                            <span class="legend-dot" style="background: var(--color-secondary);"></span> 국공립 어린이집
+                        </div>
+                        <div class="legend-item">
+                            <span class="legend-dot" style="background: var(--color-success);"></span> 아동 친화 공원
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Admin & Scraper Control Center Console -->
+                <div class="dev-console-panel" id="developer-control-center">
+                    <h2 class="section-title">실시간 크롤링 및 DB 상태 콘솔</h2>
+                    
+                    <div class="dev-actions">
+                        <button class="dev-btn" id="btn-crawl">🚀 크롤러 수동 가동 시뮬레이션</button>
+                        <button class="dev-btn secondary" id="btn-db-seed">💾 PostgreSQL 시딩 SQL 구동</button>
+                    </div>
+
+                    <div class="terminal-box" id="console-terminal">
+                        <!-- JS 로그 주입 -->
+                    </div>
+                </div>
+
+            </div>
+
+        </main>
+
+        <!-- [고도화 추가] 4. 실시간 정부발표 PDF & 기사 아카이브 게시판 -->
+        <section class="archive-board-panel" id="policy-archive-board" aria-label="정부 고시 및 부동산 정보 아카이브 게시판">
+            <h2 class="section-title">📰 실시간 정부 고시 & 뉴스 보도자료 아카이브</h2>
+            
+            <div class="archive-search-bar">
+                <input type="text" class="archive-search-input" id="archive-search-input" placeholder="고시 기관명 혹은 정책 키워드를 입력해 실시간 아카이브를 검색하세요 (예: 용적률, 국토부, 동북선)...">
+            </div>
+
+            <div class="archive-table-container">
+                <table class="archive-table">
+                    <thead>
+                        <tr>
+                            <th style="width: 20%">발행/크롤링 기관</th>
+                            <th style="width: 50%">정책자료 명세 및 세부 고시 요약</th>
+                            <th style="width: 15%">공표 일자</th>
+                            <th style="width: 15%">상태 액션</th>
+                        </tr>
+                    </thead>
+                    <tbody id="archive-table-body">
+                        <!-- JS로 동적 렌더링 -->
+                    </tbody>
+                </table>
+            </div>
+        </section>
+        
+    </div>
+
+    <!-- [고도화 추가] 5. 선제 갈아타기 전략 보고서 전용 프리미엄 글래스모피즘 모달 -->
+    <div class="modal-overlay" id="modal-overlay">
+        <div class="modal-box">
+            <button class="modal-close-btn" id="modal-close-btn">&times;</button>
+            <div id="modal-body-content">
+                <!-- JS로 동적 리포트 생성 -->
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
