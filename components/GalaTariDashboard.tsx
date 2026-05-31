@@ -97,6 +97,13 @@ export default function GalaTariDashboard() {
   // 8. 선제 갈아타기 전략 리포트 모달 상태
   const [modalActive, setModalActive] = useState(false);
 
+  // 9. 크롤링 진행 단계 상태 및 콘솔 로그 추가 헬퍼
+  const [crawlStep, setCrawlStep] = useState(0);
+  const addConsoleLog = (message: string, type: 'sys' | 'cmd' | 'err' = 'sys') => {
+    const prefix = type === 'err' ? '❌ ' : type === 'cmd' ? '❯ ' : '⚙️ ';
+    setConsoleLogs(prev => [...prev, `${prefix}${message}`]);
+  };
+
   // A. Leaflet 실제 지도 로딩 및 동적 시각화 라이프사이클 관리
   useEffect(() => {
     if (typeof window === 'undefined') return;
@@ -365,8 +372,6 @@ export default function GalaTariDashboard() {
     addConsoleLog(`Crawler: [${sc.source}] 주관 "${sc.title}" 다운로드 완료 & RAG 임베딩 DB 적재 완료`, "sys");
     setCrawlStep(prev => prev + 1);
   };
-
-  const [crawlStep, setCrawlStep] = useState(0);
 
   const handleDbSeeding = () => {
     addConsoleLog("SQL execution: complexes, infra_scores 데이터 시딩 수행 완료.", "sys");
